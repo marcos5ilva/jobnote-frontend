@@ -7,7 +7,7 @@ import produce from 'immer';
 import axios from 'axios';
 import { Container, Row, Col } from 'react-bootstrap';
 
-
+const baseURL = process.env.REACT_APP_API_URL;
 //const data = loadLists();
 
 
@@ -26,7 +26,7 @@ export default function Board(){
 
     useEffect(() => {
         
-       axios.get('http://localhost:5000/lists')
+       axios.get(baseURL+'/lists')
        .then(res => {
            const data = res.data.lists;
            if(data){
@@ -43,7 +43,7 @@ export default function Board(){
    
     const addCard = async (newCard)=>{
         try{
-           const card = await axios.patch('http://localhost:5000/cards/add/5dc7786edce42e2fa6b761f3',newCard)
+           const card = await axios.patch(baseURL+'/cards/add/5dc7786edce42e2fa6b761f3',newCard)
             const newList = [...lists];
             if(card.data){
                 newList[0].cards.push(card.data)               
@@ -57,7 +57,7 @@ export default function Board(){
 
     const removeCard = async (card)=>{
         try{
-            axios.delete('http://localhost:5000/cards/'+card._id)
+            axios.delete(baseURL+'/cards/'+card._id)
             
             console.log('card', card.list)
             lists.forEach(list => {
@@ -77,7 +77,7 @@ export default function Board(){
     const editCard = async (cardUpdate)=>{
         console.log('editCard');
         try{
-            const card = await axios.patch('http://localhost:5000/cards/add/5dc7786edce42e2fa6b761f3',cardUpdate)
+            const card = await axios.patch(baseURL+'/cards/add/5dc7786edce42e2fa6b761f3',cardUpdate)
              const newList = [...lists];
              if(card.data){
                  newList[0].cards.push(card.data) 
@@ -95,7 +95,7 @@ export default function Board(){
         console.log('CardID ', card);
 
         try{
-            const question = await axios.patch('http://localhost:5000/interviewquestions/add/'+card._id, interviewQuestion)
+            const question = await axios.patch(baseURL+'/interviewquestions/add/'+card._id, interviewQuestion)
              console.log('question.data ', question.data);
              console.log('newList[0].cards.interviewQuestions', lists[0].cards)
             const newList = [...lists];
