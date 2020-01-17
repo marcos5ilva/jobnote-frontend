@@ -1,0 +1,21 @@
+{
+  "name": "JOBnote",
+  "short_name" : "JOBnote",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation":"portrait",
+  "background_color": "#E5EAED",
+   "theme_color":"#11324c",
+   "icons": [
+       {
+          "src":"jobnote-icon-96x96.png",
+          "sizes":"96x9",
+          "type":"image/png" 
+       },
+       {
+        "src":"/jobnote-icon-144x144.png",
+        "sizes":"144x144",
+        "type":"image/png" 
+     }
+   ]
+}

@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  
+}
+
+html, body, #root {
+  height: 100%;
+  background-color: #E5EAED;
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Container{
+  padding: 0 15px;
+  height: 100%;
+  flex: 0 0 320px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 320px;
+  
+  
+}
+
+.navbar{
+  background-color: #11324c;
+  
+}
+
+.navbar-expand {
+  flex-flow: row nowrap;
+  justify-content: space-between!important;
+}
+
+.navbar-dark .navbar-nav .nav.link{
+  color: #B37A3F;
+}
+
+.navbar-text{
+  position: absolute;
+  width: 100%;
+  left: 50px;
+  text-align: center;
+  margin: auto;
+  padding-top: 10px;
+}
+
+.navbar-nav.text-right{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  font-weight: bolder;
+  color: #B37A3F;
+ 
+}
+
+.navbar-light .navbar-nav .nav-link { 
+  color: #B37A3F !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover { 
+  color: #E5EAED !important;
+}
+
+
+.board{
+  display: flex;
+  padding: 30px 0;
+  height: calc(100%-80px);
+}
+
+img.imgLogo.img-fluid{
+
+transform: translate(0%, 50%);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(17,50,76,1);
+-moz-box-shadow: 10px 10px 5px 0px rgba(17,50,76,1);
+box-shadow: 10px 10px 5px 0px rgba(17,50,76,1);
+  
+}
+
+.text-center.home-title.row {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.1em;
+  position: absolute; 
+   top: 100px; 
+   left:0; 
+   width: 100%;
+   
+}
+
+p.app-title{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+  font-size: 7em;
+
+  position: absolute; 
+   top: 125px; 
+   left: auto; 
+   width: 100%; 
+}
+
+p.app-title2{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+  font-size: 3.5em;
+
+  position: absolute; 
+   top: 250px; 
+   left: 55px; 
+   width: 100%; 
+}
+
+#textBrand{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+  font-size: 1.5em;
+  padding-left: 15px;
+  color: #E5EAED;
+}
+
+
+
+.card.signUPsignInCard{
+  background: #B37A3F;
+
+  -webkit-box-shadow: 10px 10px 31px -4px rgba(17,50,76,0.4);
+-moz-box-shadow: 10px 10px 31px -4px rgba(17,50,76,0.4);
+box-shadow: 10px 10px 31px -4px rgba(17,50,76,0.4);
+}
+
+.verticalAlignment{
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+
+
+
+i.fa{
+  color: #E5EAED; 
+}
+
+.signUPsignInCard{
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top:10%;
+  padding-bottom:10%;
+}
+
+.list{
+  padding: 0 15px;
+  height: 100%;
+  flex:0 0 320;
+  border-left: 1px solid rgba(0,0,0,0.05);
+  /*& + div{
+    border-left: 1px solid rgba(0,0,0,0.05);
+  }*/
+
+}
+
+#signInButton{
+  background-color: #11324c;
+  border-color: #194e77;
+  color: #E5EAED;
+}
+
+#signUPButton{
+  background-color: #11324c;
+  border-color: #194e77;
+  color: #E5EAED;
+}
+
+.btn.btn-primary.btn-block.btn-sm{
+  background-color: #11324c;
+  border-color: #194e77;
+  color:  #E5EAED;
+  height: 40px;
+  width: 250px;
+ 
+}
+
+
+.list ul{
+  margin-top: 30px;
+}
+
+h2.list-title{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2em;
+  color: #11324c;
+}
+
+
+
+.modal-header{
+  color:  whitesmoke !important;
+  background-color:    #11324c!important;
+}
+
+.modal-header button{
+  color:  #E5EAED;
+}
+
+.modal-body button{
+
+  background-color:    #11324c!important;
+  margin-bottom: 15px;
+}
+.nav-link.active{
+  color:  #E5EAED !important;
+  background-color:   #B37A3F!important;
+}
+
+.btn.btn-warning.btn-sm{
+  color:  #E5EAED !important;
+  background-color:  #11324c!important;
+  border-color:  #11324c!important;
+  margin-left: 45%;
+
+}
+
+.accordion>.card .card-header {
+  background-color: #f7c395;
+  margin-bottom: 5px!important;
+}
+.questions{
+  overflow-y: scroll;
+  height: 300px;
+}
+.cards{
+  position: relative;
+  background:#fff;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 5px;
+  box-shadow: 0 1px 4px 0 rgba(192, 208,230, 0.8);
+  border-top: 20px solid rgba(230, 236, 245, 0.4);
+  cursor: grab;
+  max-width: 200px;
+  max-height: 200px;
+
+}
+
+.cards p{
+  font-weight: 400;
+  line-height: 14px;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
