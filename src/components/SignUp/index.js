@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
+const baseURL = process.env.REACT_APP_API_URL;
 
 export default class SignUp  extends Component{
     constructor(props){
@@ -33,7 +34,7 @@ export default class SignUp  extends Component{
             password: this.state.password,
         }
 
-        axios.post('http://localhost:5000/users/add', user)
+        axios.post(baseURL+'/users/add', user)
             .then( res =>{
                 if(res.data.status === 'created'){
                     this.props.handleSuccessfulAuth()
