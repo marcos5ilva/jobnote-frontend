@@ -38,5 +38,6 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "homepage": "https://app.herokuapp.com/"
 }
