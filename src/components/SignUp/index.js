@@ -34,7 +34,7 @@ export default class SignUp  extends Component{
             password: this.state.password,
         }
 
-        axios.post(baseURL+'/users/add', user)
+        axios.post(baseURL+'users/add', user)
             .then( res =>{
                 if(res.data.status === 'created'){
                     this.props.handleSuccessfulAuth()
