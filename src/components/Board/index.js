@@ -43,7 +43,7 @@ export default function Board(){
    
     const addCard = async (newCard)=>{
         try{
-           const card = await axios.patch(baseURL+'cards/add/5dc7786edce42e2fa6b761f3',newCard)
+           const card = await axios.patch(baseURL+'cards/add/5e2378351dc75d0017903114',newCard)
             const newList = [...lists];
             if(card.data){
                 newList[0].cards.push(card.data)               
