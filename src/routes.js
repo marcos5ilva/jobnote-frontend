@@ -24,7 +24,7 @@ const Routes = ({loggedInStatus, handleSuccessfullAuth})=>(
                  render={(props)=>(
                      <SignIn {...props} loggedInStatus = {loggedInStatus} handleSuccessfullAuth={handleSuccessfullAuth}/>
                  )} />
-                <Route path={"/board"}
+                <Route path={"/board/:boardId"}
                 render ={(props)=>(
                     <Board {...props} />
                 )} exact/>

@@ -48,7 +48,7 @@ export default class SignUp  extends Component{
                 email: '',
                 password: '',
             });
-        //window.location = '/';
+        window.location = '/';
     }
 
     render(){

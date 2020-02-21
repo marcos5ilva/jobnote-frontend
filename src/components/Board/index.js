@@ -13,7 +13,7 @@ const baseURL = process.env.REACT_APP_API_URL;
 
 
 
-export default function Board(){
+export default function Board(props){
     
  // const [lists,setLists] = useState(data);
 
@@ -26,9 +26,13 @@ export default function Board(){
 
     useEffect(() => {
         
-       axios.get(baseURL+'lists')
+        console.log(baseURL +'board/');
+        console.log(props.match.params.boardId);
+       //axios.get(baseURL+'lists')
+       axios.get(baseURL+'board/'+props.match.params.boardId)
        .then(res => {
-           const data = res.data.lists;
+           const data = res.data.board.lists;
+           console.log('res.data ', res.data)
            if(data){
            setLists(data);
            console.log(data[0].cards)

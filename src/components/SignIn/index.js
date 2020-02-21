@@ -51,14 +51,17 @@ export default class SignIn  extends Component{
 
         axios.post(baseURL+'users/signin', user, {data: this.props.handleSuccessfullAuth})
             .then( res => {
-                console.log(res.data);
+                console.log("user data ",res.data);
+                console.log('user.board ', res.data.user.board);
+                
                 //this.setState({ user: res.data});
                 this.props.handleSuccessfullAuth();
-                this.props.history.push('/board');
+                this.props.history.push('/board/'+res.data.user.board);
               
             })
             .catch(e =>{
                 console.log(e);
+                console.log('login failed')
 
             })
     }
