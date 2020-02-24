@@ -36,8 +36,10 @@ export default class SignUp  extends Component{
 
         axios.post(baseURL+'users/add', user)
             .then( res =>{
-                if(res.data.status === 'created'){
-                    this.props.handleSuccessfulAuth()
+                console.log("res.data ", res.data)
+                if(res.data){
+                    //this.props.handleSuccessfulAuth()
+                    this.props.history.push('/board/'+res.data.board);
                 }
             } )
             .catch(e => console.log(e));
@@ -48,7 +50,6 @@ export default class SignUp  extends Component{
                 email: '',
                 password: '',
             });
-        window.location = '/';
     }
 
     render(){
