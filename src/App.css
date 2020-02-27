@@ -40,12 +40,13 @@ html, body, #root {
 }
 
 .Container{
-  padding: 0 15px;
+  padding: 0 px;
   height: 100%;
   flex: 0 0 320px;
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 320px;
+  margin-left: 0;
   
   
 }
@@ -92,9 +93,13 @@ html, body, #root {
 
 .board{
   display: flex;
-  padding: 30px 0;
+  padding: 30px 5px 30px 5px;
   height: calc(100%-80px);
+  overflow-x: scroll;
+  margin-left: 0px;
+  margin-right: 0px;
 }
+
 
 img.imgLogo.img-fluid{
 
@@ -180,15 +185,20 @@ i.fa{
 }
 
 .list{
-  padding: 0 15px;
+  padding: 10px;
+  margin:5px;
   height: 100%;
-  flex:0 0 320;
+  flex:0 0 300;
   border-left: 1px solid rgba(0,0,0,0.05);
+  background-color: rgb(196, 214, 223);
+  border-radius: 8px;
   /*& + div{
     border-left: 1px solid rgba(0,0,0,0.05);
   }*/
 
 }
+
+
 
 #signInButton{
   background-color: #11324c;
@@ -206,8 +216,8 @@ i.fa{
   background-color: #11324c;
   border-color: #194e77;
   color:  #E5EAED;
-  height: 40px;
-  width: 250px;
+  height: 30px;
+  
  
 }
 
@@ -218,7 +228,7 @@ i.fa{
 
 h2.list-title{
   font-family: 'Poppins', sans-serif;
-  font-size: 1.2em;
+  font-size: 1em;
   color: #11324c;
 }
 
@@ -259,7 +269,9 @@ h2.list-title{
   overflow-y: scroll;
   height: 300px;
 }
-.cards{
+
+
+.list cards{
   position: relative;
   background:#fff;
   border-radius: 5px;
@@ -270,8 +282,25 @@ h2.list-title{
   cursor: grab;
   max-width: 200px;
   max-height: 200px;
-
 }
+h4.card-title{
+  font-size: 1rem;
+}
+/*.cards{
+  position: relative;
+  background:#fff;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 5px;
+  box-shadow: 0 1px 4px 0 rgba(192, 208,230, 0.8);
+  border-top: 20px solid rgba(230, 236, 245, 0.4);
+  cursor: grab;
+  max-width: 200px;
+  max-height: 200px;
+  
+
+}*/
+
 
 .cards p{
   font-weight: 400;

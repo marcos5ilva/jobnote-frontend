@@ -158,11 +158,13 @@ export default function Board(props){
     return (
         <BoardContext.Provider value={{lists, move}}>
            
-             <Container className="Container board">
-                <Row className="text-center">              
-                    {lists.map((list, index) =><Col lg={4} sm={12}><List key={list.title} index = {index}  data={list} addCard={addCard} removeCard={removeCard} editCard={editCard} addInterviewQuestion={addInterviewQuestion} /> </Col>)}
+             <div className="Container board fluid">
+                <Row className=" text-center">
+                                 
+                    {lists.map((list, index) =><Col className="list" lg={3} md={4} sm={12}><List key={list.title} index = {index}  data={list} addCard={addCard} removeCard={removeCard} editCard={editCard} addInterviewQuestion={addInterviewQuestion} /> </Col>)}
+                    
                 </Row>
-            </Container>
+            </div>
         </BoardContext.Provider>
        
     ) 

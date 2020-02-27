@@ -1,9 +1,15 @@
 import React, {Component} from 'react';
+import {Modal,Button } from 'react-bootstrap';
+import SignUpSuccessModal from '../SignUpSuccessModal';
 import axios from 'axios';
+
+
 
 const baseURL = process.env.REACT_APP_API_URL;
 
 export default class SignUp  extends Component{
+
+    
     constructor(props){
         super(props);
 
@@ -108,7 +114,9 @@ export default class SignUp  extends Component{
                         </div>
                     </form>
                 </div>
-            </React.Fragment>
+                
+            </React.Fragment>  
+          
         )
 
     }

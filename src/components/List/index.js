@@ -1,5 +1,5 @@
-import React, {Component, useState} from 'react';
-import { Row, Col, Modal, Button, ButtonToolbar} from 'react-bootstrap';
+import React, { useState} from 'react';
+import {  Button} from 'react-bootstrap';
 import Card from '../Card';
 import AddCardModal from '../AddCardModal';
 
@@ -15,9 +15,14 @@ export default function List ({data, index: listIndex, addCard, removeCard, edit
        
             <header>
                 <h2 className="list-title">{data.title}</h2>
-                {data.creatable && (
+                    
+            </header>
+            <ul>
+                
+                {data.cards.map((card, index) => <Card key={card._id} listIndex= {listIndex} index={index} data={card} removeCard={removeCard} editCard ={editCard} addInterviewQuestion={addInterviewQuestion}/>)}
+            </ul>
+            {data.creatable && (
                     <>
-                        
                         <Button size="sm" block onClick = {()=> setModalShow(true)}>
                            <i className="fa fa-plus" aria-hidden="true"></i>
                         </Button>
@@ -28,13 +33,6 @@ export default function List ({data, index: listIndex, addCard, removeCard, edit
                         />
                    </> )
                 }
-                    
-            </header>
-            <ul>
-                
-                {data.cards.map((card, index) => <Card key={card._id} listIndex= {listIndex} index={index} data={card} removeCard={removeCard} editCard ={editCard} addInterviewQuestion={addInterviewQuestion}/>)}
-            </ul>
-               
         </>
     );
     
