@@ -98,10 +98,13 @@ html, body, #root {
 .board{
   display: flex;
   padding: 30px 5px 30px 5px;
-  height: calc(100%-80px);
+  min-height: 90vh;
+  /*height: calc(100%-80px);*/
   overflow-x: scroll;
+  overflow-y: scroll;
   margin-left: 0px;
   margin-right: 0px;
+
 }
 
 
