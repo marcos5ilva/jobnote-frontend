@@ -47,8 +47,9 @@ export default function Board(props){
    
     const addCard = async (newCard)=>{
         try{
-           const card = await axios.patch(baseURL+'cards/add/5e2378351dc75d0017903114',newCard)
             const newList = [...lists];
+            const card = await axios.patch(baseURL+'cards/add/'+newList[0]._id,newCard)
+            
             if(card.data){
                 newList[0].cards.push(card.data)               
             }
@@ -63,7 +64,7 @@ export default function Board(props){
         try{
             axios.delete(baseURL+'cards/'+card._id)
             
-            console.log('card', card.list)
+            
             lists.forEach(list => {
                 if(list._id === card.list){
                     list.cards = list.cards.filter(cardList => {
@@ -135,12 +136,6 @@ export default function Board(props){
         //    console.log("error", e)
         // }
    // }
-
-
-
-    
-
-   
 
    
     function move(fromList, toList, from, to){

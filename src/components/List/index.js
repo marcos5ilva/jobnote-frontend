@@ -19,7 +19,7 @@ export default function List ({data, index: listIndex, addCard, removeCard, edit
             </header>
             <ul>
                 
-                {data.cards.map((card, index) => <Card key={card._id} listIndex= {listIndex} index={index} data={card} removeCard={removeCard} editCard ={editCard} addInterviewQuestion={addInterviewQuestion}/>)}
+                {data.cards.map((card, index) => <Card key={index} listIndex= {listIndex} index={index} data={card} removeCard={removeCard} editCard ={editCard} addInterviewQuestion={addInterviewQuestion}/>)}
             </ul>
             {data.creatable && (
                     <>
