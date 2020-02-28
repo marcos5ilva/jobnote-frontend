@@ -26,16 +26,13 @@ export default function Board(props){
 
     useEffect(() => {
         
-        console.log(baseURL +'board/');
-        console.log(props.match.params.boardId);
-       //axios.get(baseURL+'lists')
+       
        axios.get(baseURL+'board/'+props.match.params.boardId)
        .then(res => {
            const data = res.data.board.lists;
-           console.log('res.data ', res.data)
+           
            if(data){
            setLists(data);
-           console.log(data[0].cards)
            }
        })
      .catch(e =>{

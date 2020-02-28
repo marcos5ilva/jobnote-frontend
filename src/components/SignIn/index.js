@@ -6,7 +6,6 @@ const baseURL = process.env.REACT_APP_API_URL;
 export default class SignIn  extends Component{
     constructor(props){
         super(props);
-        console.log('signin props ', props)
         this.onSubmit = this.onSubmit.bind(this);
         this.onChangeHandler = this.onChangeHandler.bind(this);
        
@@ -39,9 +38,7 @@ export default class SignIn  extends Component{
 
     onSubmit(e){
        e.preventDefault();
-        console.log(e);
-        console.log("teste");
-        console.log(this.state.email);
+       
         const user = {
             email: this.state.email,
             password: this.state.password,
@@ -51,8 +48,6 @@ export default class SignIn  extends Component{
 
         axios.post(baseURL+'users/signin', user, {data: this.props.handleSuccessfullAuth})
             .then( res => {
-                console.log("user data ",res.data);
-                console.log('user.board ', res.data.user.board);
                 
                 //this.setState({ user: res.data});
                 this.props.handleSuccessfullAuth();
