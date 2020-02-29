@@ -39,5 +39,5 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "proxi":"https://jobnote-api.herokuapp.com/users/signin"
+  "proxy":"https://jobnote-api.herokuapp.com/users/signin"
 }
