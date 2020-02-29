@@ -153,7 +153,7 @@ export default function Board(props){
              <div className="Container board fluid">
                 <Row className=" text-center">
                                  
-                    {lists.map((list, index) =><Col className="list" lg={3} md={4} sm={12}><List key={index} index = {index}  data={list} addCard={addCard} removeCard={removeCard} editCard={editCard} addInterviewQuestion={addInterviewQuestion} /> </Col>)}
+                    {lists.map((list, index) =><Col className="list" lg={3} md={4} sm={12}><List key={list.title + index} index = {index}  data={list} addCard={addCard} removeCard={removeCard} editCard={editCard} addInterviewQuestion={addInterviewQuestion} /> </Col>)}
                     
                 </Row>
             </div>

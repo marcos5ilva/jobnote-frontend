@@ -88,7 +88,7 @@ export default class SignUp  extends Component{
                                 <div className="form-group row">
                                     <i className="fa fa-envelope fa-2x col-2" aria-hidden="true"></i>
                                     <div className="col-10">
-                                        <input type="text" className="form-control " name="email" id="lastNameInput" placeholder="Email"
+                                        <input type="text" className="form-control " name="email" id="emailInput" placeholder="Email"
                                         required
                                         value = {this.state.email}
                                         onChange={this.onChangeHandler}
