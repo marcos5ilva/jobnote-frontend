@@ -8,7 +8,7 @@ import axios from 'axios';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const baseURL = process.env.REACT_APP_API_URL;
-//const data = loadLists();
+
 
 
 
@@ -26,8 +26,8 @@ export default function Board(props){
 
     useEffect(() => {
         
-       
-       axios.get(baseURL+'board/'+props.match.params.boardId)
+       const boardId  = props.match.params.boardId;
+       axios.get(baseURL+'board/'+ boardId)
        .then(res => {
            const data = res.data.board.lists;
            
