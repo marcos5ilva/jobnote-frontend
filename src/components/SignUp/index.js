@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component,useState} from 'react';
 import {Modal,Button } from 'react-bootstrap';
-import SignUpSuccessModal from '../SignUpSuccessModal';
+import UserFeedbackModal from '../UserFeedbackModal';
 import axios from 'axios';
 
 
@@ -15,15 +15,19 @@ export default class SignUp  extends Component{
 
         this.onSubmit = this.onSubmit.bind(this);
         this.onChangeHandler = this.onChangeHandler.bind(this);
+        
 
         this.state={
             firstName: '',
             lastName: '',
             email: '',
             password: '',
+            successModalShow: false,
+            feedbackMsg: ''
         }
     }
-
+    
+    
     onChangeHandler(e){
         this.setState({
             [e.target.name]: e.target.value
@@ -46,9 +50,14 @@ export default class SignUp  extends Component{
                 if(res.data){
                     //this.props.handleSuccessfulAuth()
                     this.props.history.push('/board/'+res.data.board);
+                    
+                    
                 }
+
             } )
-            .catch(e => console.log(e));
+            .catch(e => {console.log(e);
+                this.setState({successModalShow: true, feedbackMsg: 'User NOT created!'});
+            });
 
             this.setState({
                 firstName: '',
@@ -59,6 +68,8 @@ export default class SignUp  extends Component{
     }
 
     render(){
+
+        let successModalClose = ()=> this.setState({successModalShow: false});
         return (
             <React.Fragment>
                 <div className="row  justify-content-center verticalAlignment">
@@ -107,9 +118,14 @@ export default class SignUp  extends Component{
                                 </div>
                                 <div className="form-group row ">
                                     <div className="col-12">
-                                        <input type="submit" value="Sign Up" className="form-control btn btn-primary " id="signUPButton" />
+                                        <input type="submit" value="Sign Up" className="form-control btn btn-primary " id="signUPButton"  />
                                     </div>
+
                                 </div>
+                                <UserFeedbackModal 
+                                    show = {this.state.successModalShow}
+                                    onHide = {successModalClose}
+                                    feedbackMsg = {this.state.feedbackMsg} />
                             </div>
                         </div>
                     </form>

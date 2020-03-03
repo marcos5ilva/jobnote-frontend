@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import UserFeedbackModal from '../UserFeedbackModal';
 import axios from 'axios';
 
 const baseURL = process.env.REACT_APP_API_URL;
@@ -12,7 +13,9 @@ export default class SignIn  extends Component{
             this.state = {
             email:'',
             password:'',
-            loggedInStatus: false,   
+            loggedInStatus: false,
+            successModalShow: false,
+            feedbackMsg: ''   
         };
 
 
@@ -56,7 +59,9 @@ export default class SignIn  extends Component{
             })
             .catch(e =>{
                 console.log(e);
-                console.log('login failed')
+                console.log('login failed');
+                this.setState({successModalShow: true, feedbackMsg: 'User NOT found!'});
+
 
             })
     }
@@ -64,6 +69,8 @@ export default class SignIn  extends Component{
  
 
     render(){
+
+        let successModalClose = ()=> this.setState({successModalShow: false});
         return (
             <React.Fragment>
                 <div className="row  justify-content-center verticalAlignment">
@@ -97,6 +104,11 @@ export default class SignIn  extends Component{
                                         />
                                     </div>
                                 </div>
+                                <UserFeedbackModal 
+                                    show = {this.state.successModalShow}
+                                    onHide = {successModalClose}
+                                    feedbackMsg = {this.state.feedbackMsg} />
+    
                             </div>
                         </div>
                     </form>
